@@ -1,0 +1,12 @@
+.connect-wallet-stage-1 {
+  @apply px-10 py-8 flex flex-col;
+  .connect-wallet-stage-1-more {
+    @apply mt-6 mb-10 grid grid-cols-2 gap-8;
+  }
+  .connect-wallet-stage-1-data {
+    @apply flex items-center gap-x-6 p-5 px-7 rounded-xl border-[#2C2C43] border-[0.0625rem] text-white hover:border-[#2E76EE] hover:bg-[#2e74ee1c];
+    & span {
+      @apply text-lg font-medium;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.modal-overlay {
+  @apply absolute inset-0 z-20;
+}
+.modal-overlay-bg {
+  background: rgba(8, 10, 29, 0.5);
+  backdrop-filter: blur(15px);
+}
+.modal-active-bg {
+  @apply bg-bg-4;
+}
+.modal-wrap {
+  @apply absolute -top-[100vh] transition-[top] duration-300 flex justify-center z-30;
+  &.open {
+    @apply inset-0;
+  }
+  .modal-box {
+    @apply w-[48.125rem] mx-auto my-14 h-fit pb-7 rounded-[1.25rem];
+    .modal-head {
+      @apply flex justify-between items-center pt-7 px-10 mb-6;
+    }
+    .modal-head h1 {
+      @apply text-white font-medium text-[1.75rem];
+    }
+  }
+}

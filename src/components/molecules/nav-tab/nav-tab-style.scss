@@ -1,0 +1,11 @@
+.tab-wrapper {
+  @apply h-[3.625rem] px-[1.5625rem] flex items-center gap-x-[3.6875rem] bg-[#1D1F3E] rounded-[0.625rem];
+}
+
+.tab {
+  @apply font-medium text-base text-white before:content-[''] before:absolute before:bg-white before:h-[0.3125rem] before:w-full before:rounded-t-[0.24rem] before:bottom-[-1rem] cursor-pointer;
+}
+
+.tab-select {
+  @apply flex items-center text-[#9f9f9f] gap-x-[0.375rem] cursor-pointer;
+}

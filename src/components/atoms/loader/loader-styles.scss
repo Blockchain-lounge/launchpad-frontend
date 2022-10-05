@@ -1,0 +1,38 @@
+.loader-body {
+  @apply grid place-items-center bg-transparent;
+
+  backdrop-filter: blur(15px);
+
+  .loader {
+    @apply relative h-[12rem] w-[12rem] rounded-[50%];
+    background: linear-gradient(#2f79f9, #3daefa, #7381ff);
+    animation: animate 500ms linear infinite;
+    @keyframes animate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    .loader-child,
+    .loader-child-2,
+    .loader-child-3 {
+      @apply absolute h-full w-full rounded-[50%];
+      background: linear-gradient(#2f79f9, #3daefa, #7381ff);
+    }
+  }
+  .loader-child {
+    @apply blur-[5px];
+  }
+  .loader-child-2 {
+    @apply blur-[10px];
+  }
+  .loader-child-3 {
+    @apply blur-[15px];
+  }
+  .loader::after {
+    content: "";
+    @apply absolute top-[10px] left-[10px] right-[10px] bottom-[10px] bg-[#080A1D] rounded-[50%];
+  }
+}

@@ -1,0 +1,7 @@
+.mini-user-profile-wrapper {
+  @apply w-[20.0625rem] h-[25.625rem] bg-bg-3 absolute top-[4rem] z-10 rounded-[1.125rem]  border-[#34364C] border-[0.0625rem] p-[1.875rem] flex flex-col gap-y-[2.125rem];
+
+  .mini-user-profile-links {
+    @apply flex items-center text-white gap-x-6 font-medium hover:cursor-pointer;
+  }
+}

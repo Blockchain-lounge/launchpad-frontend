@@ -1,0 +1,21 @@
+footer {
+  @apply bg-[#1A1A30]  w-full py-[3.6562rem]  pl-[2.5625rem] pr-[10.125rem] flex justify-between;
+  .footer-icons {
+    @apply flex gap-x-[2.3125rem];
+  }
+  span {
+    @apply block;
+  }
+  .footer-copy {
+    @apply text-xl text-[#A5AEC1] mt-[3.875rem];
+  }
+  .about-links {
+    @apply flex flex-col gap-x-[1.125rem];
+  }
+  .footer-link-title {
+    @apply font-medium text-2xl text-white leading-[2.21875rem] mb-[1.125rem];
+  }
+  .footer-links {
+    @apply text-xl text-[#A5AEC1] leading-[3.15625rem];
+  }
+}

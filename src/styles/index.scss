@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+
+@font-face {
+  font-family: "Sf Pro";
+  src: url("/sf-pro-font/SF-Pro-Display-Bold.ttf") format("truetype");
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "DM Sans", "Sf Pro", sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  scroll-behavior: smooth !important;
+  background-image: url("/images/Market-place-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+html,
+body,
+* {
+  scroll-behavior: smooth !important;
+}
+
+:root {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  :root {
+    font-size: 12px;
+  }
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+span,
+h1,
+p {
+  user-select: none;
+}
+img {
+  max-width: 100%;
+}
+
+.center {
+  @apply px-[1.5rem];
+}
+
+@tailwind utilities;

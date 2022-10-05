@@ -1,0 +1,9 @@
+.layout-wrapper {
+  @apply grid grid-cols-[18.0625rem_1fr] h-screen overflow-hidden;
+  .aside {
+    @apply border-[#34364C] border-r-[0.0625rem];
+  }
+  .aside-2 {
+    @apply mt-[0.8rem];
+  }
+}

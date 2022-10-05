@@ -1,0 +1,6 @@
+.select {
+  @apply h-14 py-[1.15625rem] px-[1.25rem] rounded-[0.5rem] border-[1px] border-[#3e4158] flex items-center gap-x-4;
+  span {
+    @apply text-base text-white font-medium;
+  }
+}

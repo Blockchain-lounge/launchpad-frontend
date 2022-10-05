@@ -1,0 +1,12 @@
+.aside-dropdown-wrapper {
+  @apply flex py-[0.9375rem] px-[1rem] items-center justify-between rounded-[0.625rem];
+  .aside-label-icon-wrapper {
+    @apply flex gap-x-[0.75rem] items-center;
+    .aside-label {
+      @apply text-white font-medium select-none;
+    }
+  }
+  .aside-dropdown-tag {
+    @apply text-[0.625rem] text-[#3CABFA] font-medium py-[0.03rem] px-2 rounded-[3.125rem] bg-gradient-to-r from-[#2f79f9a1] to-[#3daefa46];
+  }
+}

@@ -1,0 +1,13 @@
+.nft-header-wrapper {
+  @apply flex w-full items-center justify-between mb-[3.625rem];
+
+  .nft-head {
+    @apply flex items-center gap-x-[1.25rem];
+  }
+  .nft-head-bg {
+    @apply bg-[url('/images/dashboard-header-rectangle.png')] bg-no-repeat bg-contain h-[0.625rem] mt-[1.125rem];
+  }
+  .nft-tail {
+    @apply font-medium text-[1.25rem] flex items-center gap-x-[0.375rem] text-white;
+  }
+}

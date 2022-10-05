@@ -1,0 +1,7 @@
+.input-wrapper {
+  @apply h-[3.3125rem] px-[1.25rem] bg-transparent flex items-center rounded-[0.56rem] flex-grow gap-x-[0.625rem] max-w-[28.125rem] w-[28.125rem] border-[#34364C] border-[0.0625rem] text-white;
+}
+
+input {
+  @apply text-[1.125rem] focus:outline-0 bg-transparent flex-1;
+}

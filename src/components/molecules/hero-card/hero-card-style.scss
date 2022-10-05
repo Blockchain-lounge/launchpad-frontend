@@ -1,0 +1,13 @@
+.hero-card-wrapper {
+  @apply h-[16.9075rem] w-[13.6706rem] bg-[url('/images/bg-2.png')] rounded-[1.774rem] py-[0.86rem] px-[0.75rem] flex flex-col justify-between items-center;
+  img {
+    @apply object-cover mb-[0.65rem];
+  }
+
+  .title {
+    @apply font-medium text-[1.06rem] text-white;
+  }
+  .price {
+    @apply font-medium text-[0.875rem] text-[#c5c5cb];
+  }
+}

@@ -1,0 +1,49 @@
+.display-wallet-wrapper {
+  @apply w-full;
+  .display-wallet-section-1 {
+    @apply grid grid-cols-2 mb-3;
+    .display-wallet-ext {
+      @apply bg-white p-7 rounded-l-xl flex flex-col justify-center items-center;
+      & > h1 {
+        @apply text-3xl font-bold max-w-[16rem] mb-4 text-center;
+      }
+      & > span {
+        @apply block bg-[#2257E7] text-white text-xl font-medium py-3 w-[30%] md:w-[75%] text-center rounded-lg;
+      }
+    }
+    .display-wallet-guide {
+      @apply bg-[#FAFBFC] px-7 py-14 rounded-r-xl flex flex-col gap-y-8;
+
+      & > span {
+        @apply flex justify-end;
+      }
+      .display-wallet-guide-list {
+        @apply flex flex-col gap-y-7 pb-10;
+        .display-wallet-guide-name {
+          @apply flex justify-center items-center gap-x-6;
+          .display-wallet-guide-icon {
+            @apply h-10 w-10 grid place-items-center rounded-full shadow shadow-[#cfd0d0cf];
+          }
+          .display-wallet-guide-description {
+            @apply text-lg font-medium w-3/5 leading-tight;
+          }
+        }
+      }
+    }
+  }
+  .display-wallet-section-2 {
+    @apply grid grid-cols-2;
+    .display-wallet-section-2-scan {
+      @apply bg-white p-7 rounded-l-xl flex flex-col justify-center items-center;
+      & > h1 {
+        @apply text-3xl font-bold mb-4 text-center;
+      }
+      & > span {
+        @apply block text-lg text-[#AAAAAA] font-medium w-[30%] md:w-[80%] rounded-lg;
+      }
+    }
+    .display-wallet-section-2-qr {
+      @apply bg-[#FAFBFC] p-7 rounded-r-xl flex justify-center;
+    }
+  }
+}

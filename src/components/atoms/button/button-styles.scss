@@ -1,0 +1,15 @@
+.btn-wrapper {
+  @apply flex justify-center items-center h-[3.625rem] w-full max-w-[12.0625rem] bg-gradient-to-r from-[#2F79F9] to-[#3DAEFA] rounded-[0.625rem] p-[0.05rem];
+}
+
+.btn {
+  @apply flex justify-center items-center gap-x-[0.875rem] h-full  text-base font-medium text-white rounded-[0.6rem] capitalize;
+}
+
+.btn-outline {
+  @apply bg-[#16162D] w-[11.9rem];
+}
+
+.btn-primary {
+  @apply w-full;
+}
