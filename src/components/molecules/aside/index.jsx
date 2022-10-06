@@ -24,37 +24,46 @@ const DashboardAside = () => {
       label: "Collections",
       icon: <CollectionIcon />,
       subLinks: [
-        { label: "Popular collections" },
-        { label: "Drop calendar" },
-        { label: "Auctions" },
+        { label: "Popular collections", link: "/collections" },
+        { label: "Drop calendar", link: "/settings" },
+        { label: "Auctions", link: "/settings" },
       ],
     },
     {
       label: "Explore",
       icon: <ExploreIcon />,
-      link: "",
+      link: "/profile",
     },
     {
       label: "Trending",
       icon: <TrendingIcon />,
-      link: "",
+      link: "/create-new-nft",
     },
     {
       label: "Activities",
       icon: <ActivitiesIcon />,
-      link: "",
+      link: "/create-new-nft",
     },
     {
       label: "Cloudax Games",
       icon: <GamesIcon />,
-      link: "",
+      link: "/create-new-nft",
       tag: "coming",
     },
 
     {
       label: "Support",
       icon: <SupportIcon />,
-      link: "",
+      link: "/create-new-nft",
+    },
+    {
+      label: "Collections",
+      icon: <CollectionIcon />,
+      subLinks: [
+        { label: "Popular collections", link: "/collections" },
+        { label: "Drop calendar", link: "/settings" },
+        { label: "Auctions", link: "/ttt" },
+      ],
     },
   ];
 
@@ -81,6 +90,7 @@ const DashboardAside = () => {
       <div>
         {asideLinks.map((value, i) => (
           <AsideDropDown
+            value={value}
             key={value.label}
             icon={value.icon}
             label={value.label}
