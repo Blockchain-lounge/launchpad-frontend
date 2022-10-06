@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "../../atoms/button";
 import InputField from "../../atoms/input";
 import CaretDown from "../../atoms/vectors/caret-down";
+import SearchIcon from "../../atoms/vectors/search-icon";
 import WalletIcon from "../../atoms/vectors/wallet-icon";
 import ConnectWallet from "../../molecules/connect-wallet";
 import DisplayWallet from "../../molecules/display-wallet";
@@ -74,38 +75,58 @@ const NavBar = () => {
         </span>
       </div>
       <div className="main-nav center">
-        <img src="/images/Cloudax_Light_logo.png" alt="nav-logo" />
+        <span className="mobile-menu">
+          <img src="/vectors/mobile-menu.svg" />
+        </span>
+        <img
+          src="/images/Cloudax_Light_logo.png"
+          alt="nav-logo"
+          className="w-[11.6875rem] lg:max-w-full"
+        />
         <div className="nav-tab">
-          <InputField />
-          <NavTab />
-        </div>
-        {isLoggedIn ? (
-          <div className="flex items-center gap-x-4 relative">
-            <img
-              src="/images/Dreamy-ape.png"
-              alt="user-img"
-              className="h-12 w-12 rounded-full"
-              onClick={handleShowProfile}
-            />
-            <div className="p-[12px]">
-              <WalletIcon onClick={handleShowBal} />
-            </div>
-            <MiniUserWallet showBal={showBal} handleSignOut={handleLogin} />
-            <MiniUserProfile
-              showProfile={showProfile}
-              handleSignOut={handleLogin}
-            />
+          <div className="sub-nav-input">
+            <InputField placeholder="Search Collections" />
           </div>
-        ) : (
-          <Button
-            title="Connect Wallet"
-            prefix={<WalletIcon />}
-            outline
-            onClick={handleWalletConnect}
-          />
-        )}
+          <span className="nav-mobile-search">
+            <SearchIcon />
+          </span>
+          <div className="sub-nav-tab">
+            <NavTab />
+          </div>
+        </div>
+        <div className="nav-auth">
+          {isLoggedIn ? (
+            <div className="flex items-center gap-x-4 relative">
+              <img
+                src="/images/Dreamy-ape.png"
+                alt="user-img"
+                className="h-12 w-12 rounded-full"
+                onClick={handleShowProfile}
+              />
+              <div className="p-[12px]">
+                <WalletIcon onClick={handleShowBal} />
+              </div>
+              <MiniUserWallet showBal={showBal} handleSignOut={handleLogin} />
+              <MiniUserProfile
+                showProfile={showProfile}
+                handleSignOut={handleLogin}
+              />
+            </div>
+          ) : (
+            <Button
+              title="Connect Wallet"
+              prefix={<WalletIcon />}
+              outline
+              onClick={handleWalletConnect}
+              twClasses="hidden lg:flex"
+            />
+          )}
+        </div>
       </div>
-      <Modal
+      <div className="mobile-tab center">
+        <NavTab />
+      </div>
+      {/* <Modal
         openModal={openModal}
         title="Connect a wallet to continue"
         closeModal={setOpenModal}
@@ -123,7 +144,7 @@ const NavBar = () => {
             <DisplayWallet closeModal={setOpenModal} setStage={setStage} />
           )}
         </div>
-      </Modal>
+      </Modal> */}
     </nav>
   );
 };

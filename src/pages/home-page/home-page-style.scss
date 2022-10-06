@@ -1,23 +1,23 @@
 .home-wrapper {
   @apply h-screen overflow-auto pb-[9.375rem];
   .hero {
-    @apply flex justify-between items-center gap-x-[3.94rem];
+    @apply flex-col-reverse flex lg:flex-row justify-between items-center gap-x-[3.94rem] p-[1.125rem] lg:p-0 rounded-3xl lg:rounded-none bg-bg-2 lg:bg-transparent;
     p {
       @apply text-[1.125rem] text-[#E0EEFF] leading-[2.125rem] tracking-[0.03rem] mt-[1rem] mb-[2.375rem];
     }
     .hero-img {
-      @apply relative max-w-[55.375rem] justify-self-end;
+      @apply relative lg:max-w-[55.375rem] justify-self-end;
       img {
         @apply w-full h-auto object-cover rounded-2xl;
       }
       .hero-cards {
-        @apply absolute bottom-[-2.2rem] right-[2.47125rem] flex gap-x-[1.25rem];
+        @apply hidden lg:absolute bottom-[-2.2rem] right-[2.47125rem] lg:flex gap-x-[1.25rem];
       }
     }
   }
   .hero-section-1 {
     .hero-section-1-collection {
-      @apply grid grid-cols-3 gap-y-[2.125rem] gap-x-[2.1875rem] mt-[3.625rem];
+      @apply grid md:grid-cols-2 xl:grid-cols-3 gap-y-[2.125rem] gap-x-[2.1875rem] mt-[3.625rem];
     }
   }
 }

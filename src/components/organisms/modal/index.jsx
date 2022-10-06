@@ -35,7 +35,7 @@ const Modal = ({ children, openModal, title, closeModal, twClx, active }) => {
                 {active ? (
                   <CloseIcon />
                 ) : (
-                  <img src="/vectors/close-icon.svg" alt="" />
+                  <img src="/vectors/close-icon.svg" alt="close modal" />
                 )}
               </span>
             </div>

@@ -1,9 +1,11 @@
 .aside-container {
-  @apply pl-[1.5rem] pr-[1.125rem] relative mt-[0.8rem];
+  @apply h-[54rem] lg:h-screen lg:px-[1.125rem] relative mt-[0.8rem];
 }
-
+.aside-btn {
+  @apply flex justify-between gap-x-[2.1875rem] mb-[2.125rem] items-center lg:hidden;
+}
 .social-links {
-  @apply grid grid-cols-2 gap-x-3 gap-y-[0.625rem] cursor-pointer fixed bottom-[2%];
+  @apply grid grid-cols-2 gap-x-3 gap-y-[0.625rem] cursor-pointer absolute w-[100%] lg:w-[87%] bottom-[2rem] lg:bottom-[20%];
 }
 
 .social-link {

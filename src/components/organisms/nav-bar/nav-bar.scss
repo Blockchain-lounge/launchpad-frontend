@@ -1,7 +1,7 @@
 nav {
-  @apply w-full h-[8.9375rem] border-[#34364C] border-b-[0.0625rem];
+  @apply lg:h-[8.9375rem] lg:border-[#34364C] lg:border-b-[0.0625rem] overflow-hidden max-w-full;
   .nav-status {
-    @apply bg-[#1F1F35] h-10 w-full flex justify-between items-center;
+    @apply hidden lg:flex bg-[#1F1F35] h-10 w-full  justify-between items-center;
 
     .nav-status-title {
       @apply text-white font-medium text-[0.875rem];
@@ -14,9 +14,25 @@ nav {
     @apply flex items-center gap-x-[0.375rem] cursor-pointer text-white;
   }
   .main-nav {
-    @apply flex justify-between items-center w-full pt-[1.5rem] pb-[1.25rem];
-    .nav-tab {
-      @apply flex items-center gap-x-[2.5rem];
+    @apply flex justify-between items-center pt-[2.8125rem] pb-6 overflow-hidden w-full lg:pt-[1.5rem] lg:pb-[1.25rem];
+    .mobile-menu {
+      @apply block lg:hidden;
     }
+    .nav-auth {
+      @apply hidden lg:block;
+    }
+    .nav-tab {
+      @apply lg:w-3/5 lg:grid lg:grid-cols-[0.5fr_0.5fr] items-center lg:gap-x-[2.5rem];
+      .sub-nav-tab,
+      .sub-nav-input {
+        @apply hidden lg:block;
+      }
+      .nav-mobile-search {
+        @apply relative h-16 rounded-xl border-[#ffffff24] border-[0.0625rem] p-[1rem] flex justify-center items-center lg:hidden;
+      }
+    }
+  }
+  .mobile-tab {
+    @apply relative;
   }
 }

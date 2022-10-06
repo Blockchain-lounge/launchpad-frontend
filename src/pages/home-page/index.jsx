@@ -30,83 +30,84 @@ const HomePage = () => {
   const [activeCard, setActiveCard] = useState(heroData[0]);
 
   return (
-    <HideUntilLoaded
-      animationIn="bounce"
-      imageToLoad="/images/hero-dashboard.jpg"
-      Spinner={() => <Loader />}
-    >
-      <DashboardLayout>
-        <div className="home-wrapper">
-          <div className="space-y-[9rem] center mb-[10.125rem]">
-            <section className="hero">
-              <div>
-                <Tag tag={activeCard?.tag} icon={<FeaturedIcon />} />
-                <Heading title={activeCard.title} twClasses="mt-4" />
-                <p className="max-w-xl">{activeCard.content}</p>
-                <Button title={activeCard.cta} />
+    // <HideUntilLoaded
+    //   animationIn="bounce"
+    //   imageToLoad="/images/hero-dashboard.jpg"
+    //   Spinner={() => <Loader />}
+    // >
+    <DashboardLayout>
+      <div className="home-wrapper">
+        <div className="space-y-[9rem] center mb-[10.125rem]">
+          <section className="hero">
+            <div>
+              <Tag tag={activeCard?.tag} icon={<FeaturedIcon />} />
+              <Heading title={activeCard.title} twClasses="mt-4" />
+              <p className="lg:max-w-xl">{activeCard.content}</p>
+              <Button title={activeCard.cta} />
+            </div>
+            <div className="hero-img">
+              <div className=" max-w-full lg:h-[44.5625rem] lg:max-w-[54.73rem] flex">
+                <img
+                  src={activeCard.img}
+                  alt={activeCard.title + "-img"}
+                  className="object-cover flex-1"
+                />
               </div>
-              <div className="hero-img">
-                <div className="h-[44.5625rem] max-w-[54.73rem] flex">
-                  <img
-                    src={activeCard.img}
-                    alt={activeCard.title + "-img"}
-                    className="object-cover flex-1"
-                  />
-                </div>
-                <div className="hero-cards">
-                  {heroData
-                    .filter((d, i) => d.title !== activeCard.title)
-                    .map((data, i) => (
-                      <HeroCard
-                        key={data.title}
-                        {...data}
-                        onClick={() => {
-                          setActiveCard(data);
-                        }}
-                      />
-                    ))}
-                </div>
+              <div className="hero-cards">
+                {heroData
+                  .filter((d, i) => d.title !== activeCard.title)
+                  .map((data, i) => (
+                    <HeroCard
+                      key={data.title}
+                      {...data}
+                      onClick={() => {
+                        setActiveCard(data);
+                      }}
+                    />
+                  ))}
+              </div>
+              <div className="">
                 <HeroIndicator />
               </div>
-            </section>
-            <section className="hero-section-1">
-              <NftHeaderCard
-                heading="Popular Collections"
-                selectTitle="Last 24 hours"
-              />
-              <div className="hero-section-1-collection">
-                {nftDatas.map(({ imgUrl, title }, i) => (
-                  <NftMiniCard
-                    key={`title-${i + 1}`}
-                    index={i + 1}
-                    title={title}
-                    imgUrl={imgUrl}
-                  />
-                ))}
-              </div>
-            </section>
+            </div>
+          </section>
+          <section className="hero-section-1">
+            <NftHeaderCard
+              heading="Popular Collections"
+              selectTitle="Last 24 hours"
+            />
+            <div className="hero-section-1-collection">
+              {nftDatas.map(({ imgUrl, title }, i) => (
+                <NftMiniCard
+                  key={`title-${i + 1}`}
+                  index={i + 1}
+                  title={title}
+                  imgUrl={imgUrl}
+                />
+              ))}
+            </div>
+          </section>
 
-            <section>
-              <NftHeaderCard heading="LaunchPad Drops" selectTitle="On Sale" />
-              <Sliders data={nft2Datas} />
-            </section>
-            <section>
-              <NftHeaderCard
-                heading="In-Demand Collections"
-                selectTitle="All"
-              />
-              <Sliders data={nft3Datas} />
-            </section>
-            <section>
-              <NftHeaderCard heading="Explore Art" />
-              <Sliders data={nft4Datas} />
-            </section>
-          </div>
-          <Footer />
+          <section>
+            <NftHeaderCard heading="LaunchPad Drops" selectTitle="On Sale" />
+            <Sliders data={nft2Datas} />
+          </section>
+          <section>
+            <NftHeaderCard heading="In-Demand Collections" selectTitle="All" />
+            <Sliders data={nft3Datas} />
+          </section>
+          <section>
+            <NftHeaderCard heading="Explore Art" />
+            <Sliders data={nft4Datas} />
+          </section>
         </div>
-      </DashboardLayout>
-    </HideUntilLoaded>
+        <Footer />
+      </div>
+    </DashboardLayout>
   );
+  {
+    /* </HideUntilLoaded> */
+  }
 };
 
 export default HomePage;

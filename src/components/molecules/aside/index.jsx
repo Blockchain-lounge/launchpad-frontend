@@ -13,6 +13,8 @@ import YoutubeIcon from "../../atoms/vectors/youtube-icon";
 import TwitterIcon from "../../atoms/vectors/twitter-icon";
 import InstagramIcon from "../../atoms/vectors/instagram-icon";
 import "./aside-style.scss";
+import Button from "../../atoms/button";
+import WalletIcon from "../../atoms/vectors/wallet-icon";
 
 const DashboardAside = () => {
   const [isActiveIndex, setActiveIndex] = useState(null);
@@ -67,6 +69,15 @@ const DashboardAside = () => {
 
   return (
     <div className="aside-container">
+      <div className="aside-btn">
+        <img src="/vectors/close-icon.svg" alt="" />
+        <Button
+          title="Connect Wallet"
+          prefix={<WalletIcon />}
+          outline
+          // onClick={handleWalletConnect}
+        />
+      </div>
       <div>
         {asideLinks.map((value, i) => (
           <AsideDropDown

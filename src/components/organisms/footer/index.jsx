@@ -22,10 +22,10 @@ const Footer = () => {
   ];
   return (
     <footer>
-      <div>
+      <div className="-order-1">
         <img src="/images/Cloudax_Light_logo.png" alt="logo" />
       </div>
-      <div>
+      <div className="footer-icon-copy">
         <div className="footer-icons">
           <YoutubeIcon />
           <TwitterIcon />
