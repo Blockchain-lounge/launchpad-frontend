@@ -21,16 +21,28 @@ const Footer = () => {
     "Collection",
   ];
   return (
-    <footer>
+    <footer className="center">
       <div className="-order-1">
-        <img src="/images/Cloudax_Light_logo.png" alt="logo" />
+        <img
+          src="/images/Cloudax_Light_logo.png"
+          alt="logo"
+          className="w-[14.6875rem] lg:max-w-full mb-8 lg:mb-0"
+        />
       </div>
       <div className="footer-icon-copy">
         <div className="footer-icons">
-          <YoutubeIcon />
-          <TwitterIcon />
-          <FacebookIcon />
-          <GooglePlusIcon />
+          <span>
+            <YoutubeIcon />
+          </span>
+          <span>
+            <TwitterIcon />
+          </span>
+          <span>
+            <FacebookIcon />
+          </span>
+          <span>
+            <GooglePlusIcon />
+          </span>
         </div>
         <span className="footer-copy">All rights reserved @Cloudax 2022</span>
       </div>

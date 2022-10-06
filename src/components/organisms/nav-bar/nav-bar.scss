@@ -1,5 +1,5 @@
 nav {
-  @apply lg:h-[8.9375rem] lg:border-[#34364C] lg:border-b-[0.0625rem] overflow-hidden max-w-full;
+  @apply lg:border-[#34364C] lg:border-b-[0.0625rem] overflow-hidden max-w-full relative lg:static;
   .nav-status {
     @apply hidden lg:flex bg-[#1F1F35] h-10 w-full  justify-between items-center;
 
@@ -33,6 +33,6 @@ nav {
     }
   }
   .mobile-tab {
-    @apply relative;
+    @apply lg:hidden;
   }
 }

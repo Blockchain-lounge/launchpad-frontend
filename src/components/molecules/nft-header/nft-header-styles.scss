@@ -2,7 +2,7 @@
   @apply flex w-full items-center justify-between mb-[3.625rem];
 
   .nft-head {
-    @apply flex w-full justify-between items-center gap-x-[1.25rem];
+    @apply flex w-full justify-between items-center lg:gap-x-[1.25rem] lg:justify-start;
   }
   .nft-head-bg {
     @apply bg-[url('/images/dashboard-header-rectangle.png')] bg-no-repeat bg-contain h-[0.625rem] mt-[1.125rem];

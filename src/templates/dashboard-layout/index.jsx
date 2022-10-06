@@ -4,7 +4,7 @@ import AsideBar from "../../components/molecules/aside";
 import "./layout-1.scss";
 const DashboardLayout = ({ children, active }) => {
   return (
-    <div>
+    <div className="flex flex-col">
       <NavBar />
       <div className="layout-wrapper">
         {active && <div className="layout-overlay"></div>}

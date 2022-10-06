@@ -96,7 +96,7 @@ const NavBar = () => {
         </div>
         <div className="nav-auth">
           {isLoggedIn ? (
-            <div className="flex items-center gap-x-4 relative">
+            <div className="flex items-center gap-x-4">
               <img
                 src="/images/Dreamy-ape.png"
                 alt="user-img"
@@ -126,7 +126,7 @@ const NavBar = () => {
       <div className="mobile-tab center">
         <NavTab />
       </div>
-      {/* <Modal
+      <Modal
         openModal={openModal}
         title="Connect a wallet to continue"
         closeModal={setOpenModal}
@@ -144,7 +144,7 @@ const NavBar = () => {
             <DisplayWallet closeModal={setOpenModal} setStage={setStage} />
           )}
         </div>
-      </Modal> */}
+      </Modal>
     </nav>
   );
 };

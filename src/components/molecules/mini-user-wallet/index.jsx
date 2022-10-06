@@ -9,7 +9,7 @@ const MiniUserWallet = ({ showBal, handleSignOut }) => {
       className={clsx(
         "mini-wallet-wrapper",
         showBal
-          ? "transition-[right] duration-300 right-0"
+          ? "transition-[right] duration-300 right-6"
           : "transition-[right] ease-in-out duration-300 right-[-50rem]"
       )}
     >

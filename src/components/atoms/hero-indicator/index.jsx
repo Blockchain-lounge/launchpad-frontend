@@ -3,7 +3,7 @@ import NextIndicator from "../vectors/next-icon";
 import clsx from "clsx";
 import "./hero-indicator-styles.scss";
 
-const HeroIndicator = () => {
+const HeroIndicator = ({ arr, active, setActiveData }) => {
   const sizes = [
     "h-[1.125rem] w-[1.125rem]",
     "h-[0.8125rem] w-[0.8125rem]",
@@ -13,17 +13,21 @@ const HeroIndicator = () => {
   ];
   return (
     <div className="hero-indicator">
-      {sizes.map((size, i) => (
+      {arr.map((data) => (
         <div
-          key={size}
+          key={data.title}
           className={clsx(
-            `rounded-[50%]`,
-            size,
-            i === 0 ? "bg-white" : "bg-[#5c5c6c]"
+            "rounded-[50%]",
+            data.title === active.title
+              ? "h-[1.125rem] w-[1.125rem] bg-white"
+              : "h-[0.6875rem] w-[0.6875rem] bg-[#5c5c6c]"
           )}
+          onClick={() => setActiveData(data)}
         ></div>
       ))}
-      <NextIndicator />
+      <span className="hidden lg:block">
+        <NextIndicator />
+      </span>
     </div>
   );
 };

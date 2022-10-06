@@ -45,18 +45,14 @@ const HomePage = () => {
               <p className="lg:max-w-xl">{activeCard.content}</p>
               <Button title={activeCard.cta} />
             </div>
-            <div className="hero-img">
-              <div className=" max-w-full lg:h-[44.5625rem] lg:max-w-[54.73rem] flex">
-                <img
-                  src={activeCard.img}
-                  alt={activeCard.title + "-img"}
-                  className="object-cover flex-1"
-                />
+            <div className="hero-img-cards">
+              <div className="hero-img">
+                <img src={activeCard.img} alt={activeCard.title + "-img"} />
               </div>
               <div className="hero-cards">
                 {heroData
-                  .filter((d, i) => d.title !== activeCard.title)
-                  .map((data, i) => (
+                  .filter((d) => d.title !== activeCard.title)
+                  .map((data) => (
                     <HeroCard
                       key={data.title}
                       {...data}
@@ -66,8 +62,12 @@ const HomePage = () => {
                     />
                   ))}
               </div>
-              <div className="">
-                <HeroIndicator />
+              <div className="flex w-full mb-4 lg:mb-0 items-center justify-center lg:block mt-4 lg:mt-[2.6875rem]">
+                <HeroIndicator
+                  arr={heroData}
+                  active={activeCard}
+                  setActiveData={setActiveCard}
+                />
               </div>
             </div>
           </section>
@@ -86,15 +86,18 @@ const HomePage = () => {
                 />
               ))}
             </div>
+            <span className="mobile-see-all-btn">See All</span>
           </section>
 
           <section>
             <NftHeaderCard heading="LaunchPad Drops" selectTitle="On Sale" />
             <Sliders data={nft2Datas} />
+            <span className="mobile-see-all-btn">See All</span>
           </section>
           <section>
             <NftHeaderCard heading="In-Demand Collections" selectTitle="All" />
             <Sliders data={nft3Datas} />
+            <span className="mobile-see-all-btn">See All</span>
           </section>
           <section>
             <NftHeaderCard heading="Explore Art" />

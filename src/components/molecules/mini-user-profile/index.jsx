@@ -41,7 +41,7 @@ const MiniUserProfile = ({ showProfile, onClick, handleSignOut }) => {
       className={clsx(
         "mini-user-profile-wrapper",
         showProfile
-          ? "transition-[right] duration-300 right-6"
+          ? "transition-[right] duration-300 right-12"
           : "transition-[right] ease-in-out duration-300 right-[-50rem]"
       )}
     >
