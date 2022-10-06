@@ -12,7 +12,7 @@ const NftHeader = ({ heading, selectTitle }) => {
         <div className="nft-head">
           <Heading
             title={heading}
-            twClasses="text-3xl leading-[2rem] lg:text-5xl lg:leading-[3.58rem] mt-0"
+            twClasses="text-[1.75rem] leading-[2rem] lg:text-5xl lg:leading-[3.58rem] mt-0"
           />
           {selectTitle && <Select title={selectTitle} />}
         </div>
