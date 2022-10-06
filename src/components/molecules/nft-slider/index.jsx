@@ -38,7 +38,7 @@ const Sliders = ({ data = [] }) => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1.1,
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
