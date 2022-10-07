@@ -15,9 +15,15 @@ import InstagramIcon from "../../atoms/vectors/instagram-icon";
 import "./aside-style.scss";
 import Button from "../../atoms/button";
 import WalletIcon from "../../atoms/vectors/wallet-icon";
+import { useDispatch } from "react-redux";
+import { toggleMobileModal } from "../../../reducers/modalReudcer";
 
 const DashboardAside = () => {
+  const dispatch = useDispatch();
   const [isActiveIndex, setActiveIndex] = useState(null);
+  const handleMobileModalToggle = () => {
+    dispatch(toggleMobileModal());
+  };
 
   const asideLinks = [
     {
@@ -56,15 +62,6 @@ const DashboardAside = () => {
       icon: <SupportIcon />,
       link: "/create-new-nft",
     },
-    {
-      label: "Collections",
-      icon: <CollectionIcon />,
-      subLinks: [
-        { label: "Popular collections", link: "/collections" },
-        { label: "Drop calendar", link: "/settings" },
-        { label: "Auctions", link: "/ttt" },
-      ],
-    },
   ];
 
   const socialLinks = [
@@ -79,13 +76,14 @@ const DashboardAside = () => {
   return (
     <div className="aside-container">
       <div className="aside-btn">
-        <img src="/vectors/close-icon.svg" alt="" />
-        <Button
-          title="Connect Wallet"
-          prefix={<WalletIcon />}
-          outline
-          // onClick={handleWalletConnect}
+        <img
+          src="/vectors/close-icon.svg"
+          alt="close-mobile-tab-img"
+          onClick={handleMobileModalToggle}
         />
+        <span className="block m-1">
+          <Button title="Connect Wallet" prefix={<WalletIcon />} outline />
+        </span>
       </div>
       <div>
         {asideLinks.map((value, i) => (

@@ -36,7 +36,7 @@ const AsideDropDown = ({
   };
   const activeSubIndex = localStorage.getItem("activeSubNav");
   const currentPath = window.location.pathname;
-  console.log(activeSubIndex);
+  // console.log(activeSubIndex);
   return (
     <>
       <div className="mb-[0.5rem]" onClick={() => handleisActive(value)}>

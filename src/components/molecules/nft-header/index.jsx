@@ -8,7 +8,7 @@ import "./nft-header-styles.scss";
 const NftHeader = ({ heading, selectTitle }) => {
   return (
     <div className="nft-header-wrapper">
-      <div className="flex flex-col w-full lg:w-[50%]">
+      <div className="flex flex-col w-full lg:w-[60%]">
         <div className="nft-head">
           <Heading
             title={heading}

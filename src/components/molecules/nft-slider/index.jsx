@@ -19,12 +19,12 @@ const Sliders = ({ data = [] }) => {
     prevArrow: <NextSliderBtn />,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1540,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
+          slidesToShow: 2.5,
+          slidesToScroll: 2,
+          infinite: false,
+          dots: false,
         },
       },
       {

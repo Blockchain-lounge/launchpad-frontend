@@ -10,11 +10,11 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/nft-detail-page" element={<NftDetailPage />} />
-      <Route path="/create-new-nft" element={<CreateNewNftPage />} />
-      <Route path="/collections" element={<CollectionsPage />} />
-      <Route path="/settings" element={<SettingsPage />} />
-      <Route path="/profile" element={<ProfilePage />} />
+      <Route path="nft-detail-page" element={<NftDetailPage />} />
+      <Route path="create-new-nft" element={<CreateNewNftPage />} />
+      <Route path="collections" element={<CollectionsPage />} />
+      <Route path="settings" element={<SettingsPage />} />
+      <Route path="profile" element={<ProfilePage />} />
     </Routes>
   );
 }

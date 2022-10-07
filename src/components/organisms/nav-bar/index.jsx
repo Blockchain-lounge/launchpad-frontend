@@ -1,4 +1,16 @@
 import { useState } from "react";
+
+import {
+  useAccount,
+  useConnect,
+  useSignMessage,
+  useDisconnect,
+  useEnsAvatar,
+  useEnsName,
+} from "wagmi";
+import { InjectedConnector } from "wagmi/connectors/injected";
+import axios from "axios";
+
 import Button from "../../atoms/button";
 import InputField from "../../atoms/input";
 import CaretDown from "../../atoms/vectors/caret-down";
@@ -10,16 +22,39 @@ import MiniUserProfile from "../../molecules/mini-user-profile";
 import MiniUserWallet from "../../molecules/mini-user-wallet";
 import NavTab from "../../molecules/nav-tab";
 import Modal from "../modal";
+
 import "./nav-bar.scss";
 
+import { toggleLoggedInUser } from "../../../reducers/authReducer";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleMobileModal } from "../../../reducers/modalReudcer";
+
 const NavBar = () => {
+  const { connectAsync } = useConnect();
+  const { disconnectAsync } = useDisconnect();
+  const { isConnected } = useAccount();
+  // const { signMessageAsync } = useSignMessage();
+
+  const isLoggedIn = useSelector(({ auth }) => auth.isLoggedIn);
+  const dispatch = useDispatch();
+
   const [showProfile, setShowProfile] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const [showBal, setShowBal] = useState(false);
 
   const [activeTab, setActiveTab] = useState(0);
   const [stage, setStage] = useState(0);
+
+  const handleAuth = async () => {
+    //disconnects the web3 provider if it's already active
+    if (isConnected) {
+      await disconnectAsync();
+    }
+    // enabling the web3 provider metamask
+    const { account, chain } = await connectAsync({
+      connector: new InjectedConnector(),
+    });
+  };
 
   const statusArr = [
     {
@@ -42,13 +77,17 @@ const NavBar = () => {
 
   const handleWalletConnect = () => {
     setOpenModal(!openModal);
-    setIsLoggedIn(!isLoggedIn);
+    dispatch(toggleLoggedInUser());
   };
 
   const handleLogin = () => {
-    setIsLoggedIn(!isLoggedIn);
     setShowProfile(false);
     setShowBal(false);
+    dispatch(toggleLoggedInUser());
+  };
+
+  const handleMobileModal = () => {
+    dispatch(toggleMobileModal());
   };
 
   const handleShowBal = () => {
@@ -75,11 +114,11 @@ const NavBar = () => {
         </span>
       </div>
       <div className="main-nav center">
-        <span className="mobile-menu">
+        <span className="mobile-menu" onClick={handleMobileModal}>
           <img src="/vectors/mobile-menu.svg" />
         </span>
         <img
-          src="/images/Cloudax_Light_logo.png"
+          src="/images/cloudax1.svg"
           alt="nav-logo"
           className="w-[11.6875rem] lg:max-w-full"
         />

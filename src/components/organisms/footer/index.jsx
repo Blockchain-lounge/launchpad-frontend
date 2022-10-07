@@ -24,7 +24,7 @@ const Footer = () => {
     <footer className="center">
       <div className="-order-1">
         <img
-          src="/images/Cloudax_Light_logo.png"
+          src="/images/cloudax1.svg"
           alt="logo"
           className="w-[14.6875rem] lg:max-w-full mb-8 lg:mb-0"
         />

@@ -2,14 +2,21 @@ import clsx from "clsx";
 import NavBar from "../../components/organisms/nav-bar";
 import AsideBar from "../../components/molecules/aside";
 import "./layout-1.scss";
-const DashboardLayout = ({ children, active }) => {
+import { useSelector } from "react-redux";
+
+const DashboardLayout = ({ children, active = true }) => {
+  const isMobileModal = useSelector(({ modal }) => modal.isMobileModalOpen);
+
   return (
     <div className="flex flex-col">
       <NavBar />
       <div className="layout-wrapper">
-        {active && <div className="layout-overlay"></div>}
+        {isMobileModal && <div className="layout-overlay"></div>}
         <aside
-          className={clsx("aside", active ? "-left-[-2rem]" : "-left-[40rem]")}
+          className={clsx(
+            "aside",
+            isMobileModal ? "-left-[-2rem]" : "-left-[40rem]"
+          )}
         >
           <AsideBar />
         </aside>
