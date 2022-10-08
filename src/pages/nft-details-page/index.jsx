@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Heading from "../../components/atoms/heading";
 
 import ArrowBack from "../../components/atoms/vectors/arrow-down";
@@ -7,6 +8,7 @@ import DashboardLayout from "../../templates/dashboard-layout";
 import "./nft-detail-page-style.scss";
 
 const NftDetailPage = () => {
+  const navigate = useNavigate();
   const nftData = {
     content:
       "Become one of the 4,000 Ducks to gain access to the ultimate Play-and-Earn Metaverse DucksVegas NFT becomes your digital identity, your profile picture, and your in-game character. Participate in a variety of games to climb leaderboards, level up, and most importantly - earn $QUACK. Otherwise, rent out your NFTs to receive a steady stream of passive income.",
@@ -18,7 +20,7 @@ const NftDetailPage = () => {
       <div className="nft-detail-wrapper">
         <div className="nft-detail-wrapper-content center">
           <div>
-            <div className="hidden lg:block">
+            <div className="hidden lg:block" onClick={() => navigate(-1)}>
               <ArrowBack />
             </div>
             <Heading title="Dreamy Ape" twClasses="mt-4" />

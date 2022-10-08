@@ -3,7 +3,10 @@
 }
 
 .tab {
-  @apply font-medium text-base text-white before:absolute before:content-[''] before:bg-white before:h-[0.3125rem] before:w-full before:rounded-t-[0.24rem] before:bottom-[-1rem] cursor-pointer;
+  @apply font-medium text-base text-white cursor-pointer;
+}
+.tab::before {
+  @apply absolute content-[''] bg-white h-[0.3125rem] w-full rounded-t-[0.24rem] bottom-[-1rem];
 }
 
 .tab-select {

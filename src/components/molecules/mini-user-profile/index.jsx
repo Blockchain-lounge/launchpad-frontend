@@ -1,4 +1,8 @@
 import clsx from "clsx";
+
+import Toggle from "react-toggle";
+import "react-toggle/style.css";
+
 import "./mini-user-profile.scss";
 
 import ProfileIcon from "../../atoms/vectors/profile-icon";
@@ -49,11 +53,19 @@ const MiniUserProfile = ({ showProfile, onClick, handleSignOut }) => {
         <div key={link} className="mini-user-profile-links">
           {icon}{" "}
           <span
-            className="mini-user-profile-link hover:text-[#3694FA]"
+            className="mini-user-profile-link flex-1 hover:text-[#3694FA]"
             onClick={onClick}
           >
             {link}
           </span>
+          {link === "Night Mode" && (
+            <Toggle
+              defaultChecked={false}
+              icons={false}
+              className="mini-user-toggle-btn"
+              // onChange={this.handleTofuChange}
+            />
+          )}
         </div>
       ))}
       <div className="mini-user-profile-links">

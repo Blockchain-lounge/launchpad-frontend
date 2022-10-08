@@ -1,4 +1,5 @@
 import clsx from "clsx";
+
 import NavBar from "../../components/organisms/nav-bar";
 import AsideBar from "../../components/molecules/aside";
 import "./layout-1.scss";
@@ -8,10 +9,11 @@ const DashboardLayout = ({ children, active = true }) => {
   const isMobileModal = useSelector(({ modal }) => modal.isMobileModalOpen);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full">
       <NavBar />
       <div className="layout-wrapper">
         {isMobileModal && <div className="layout-overlay"></div>}
+
         <aside
           className={clsx(
             "aside",

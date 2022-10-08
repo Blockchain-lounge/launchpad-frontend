@@ -3,5 +3,9 @@
 
   .mini-user-profile-links {
     @apply flex items-center text-white gap-x-6 font-medium hover:cursor-pointer;
+
+    .mini-user-toggle-btn.react-toggle--checked .react-toggle-track {
+      @apply bg-[#0F94F2];
+    }
   }
 }

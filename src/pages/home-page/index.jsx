@@ -1,5 +1,3 @@
-import { HideUntilLoaded } from "react-animation";
-
 import "./home-page-style.scss";
 
 import NftHeaderCard from "../../components/molecules/nft-header";
@@ -22,19 +20,16 @@ import {
   nft3Datas,
   nft4Datas,
 } from "../../store/data";
-import Loader from "../../components/atoms/loader";
+
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   const [heroData, setHeroData] = useState(heroCards);
   const [activeCard, setActiveCard] = useState(heroData[0]);
+  const navigate = useNavigate();
 
   return (
-    // <HideUntilLoaded
-    //   animationIn="bounce"
-    //   imageToLoad="/images/hero-dashboard.jpg"
-    //   Spinner={() => <Loader />}
-    // >
     <DashboardLayout>
       <div className="home-wrapper">
         <div className="space-y-[9rem] center mb-[10.125rem]">
@@ -43,7 +38,10 @@ const HomePage = () => {
               <Tag tag={activeCard?.tag} icon={<FeaturedIcon />} />
               <Heading title={activeCard.title} twClasses="mt-4" />
               <p className="lg:max-w-xl">{activeCard.content}</p>
-              <Button title={activeCard.cta} />
+              <Button
+                title={activeCard.cta}
+                onClick={() => navigate("/nft-detail-page")}
+              />
             </div>
             <div className="hero-img-cards">
               <div className="hero-img">
@@ -108,9 +106,6 @@ const HomePage = () => {
       </div>
     </DashboardLayout>
   );
-  {
-    /* </HideUntilLoaded> */
-  }
 };
 
 export default HomePage;

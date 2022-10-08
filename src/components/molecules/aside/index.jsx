@@ -5,27 +5,27 @@ import TrendingIcon from "../../atoms/vectors/trending-icon";
 import GamesIcon from "../../atoms/vectors/games-icon";
 import ActivitiesIcon from "../../atoms/vectors/activities-icon";
 import SupportIcon from "../../atoms/vectors/support-icon";
-import AsideDropDown from "../../atoms/aside-dropdown";
+import SidebarMenu from "../../atoms/sidebar-link";
 import IOSIcon from "../../atoms/vectors/ios-icon";
 import DiscordIcon from "../../atoms/vectors/discord-icon";
 import TikTokIcon from "../../atoms/vectors/tiktok-icon";
 import YoutubeIcon from "../../atoms/vectors/youtube-icon";
 import TwitterIcon from "../../atoms/vectors/twitter-icon";
 import InstagramIcon from "../../atoms/vectors/instagram-icon";
-import "./aside-style.scss";
+import "./sidebar-style.scss";
 import Button from "../../atoms/button";
 import WalletIcon from "../../atoms/vectors/wallet-icon";
 import { useDispatch } from "react-redux";
 import { toggleMobileModal } from "../../../reducers/modalReudcer";
 
-const DashboardAside = () => {
+const SideBar = () => {
   const dispatch = useDispatch();
   const [isActiveIndex, setActiveIndex] = useState(null);
   const handleMobileModalToggle = () => {
     dispatch(toggleMobileModal());
   };
 
-  const asideLinks = [
+  const sidebarLinks = [
     {
       label: "Collections",
       icon: <CollectionIcon />,
@@ -74,8 +74,8 @@ const DashboardAside = () => {
   ];
 
   return (
-    <div className="aside-container">
-      <div className="aside-btn">
+    <div className="sidebar-container">
+      <div className="sidebar-btn">
         <img
           src="/vectors/close-icon.svg"
           alt="close-mobile-tab-img"
@@ -85,23 +85,9 @@ const DashboardAside = () => {
           <Button title="Connect Wallet" prefix={<WalletIcon />} outline />
         </span>
       </div>
-      <div>
-        {asideLinks.map((value, i) => (
-          <AsideDropDown
-            value={value}
-            key={value.label}
-            icon={value.icon}
-            label={value.label}
-            subLinks={value.subLinks}
-            link={value.link}
-            tag={value.tag}
-            index={i}
-            activeIndex={isActiveIndex}
-            isActive={isActiveIndex === i}
-            handleActive={setActiveIndex}
-          />
-        ))}
-      </div>
+      {sidebarLinks.map((item) => (
+        <SidebarMenu key={item.label} item={item} />
+      ))}
       <div className="social-links">
         {socialLinks.map(({ icon, label }) => (
           <span key={label} className="social-link">
@@ -113,4 +99,4 @@ const DashboardAside = () => {
   );
 };
 
-export default DashboardAside;
+export default SideBar;
