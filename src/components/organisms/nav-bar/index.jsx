@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import {
   useAccount,
@@ -44,6 +45,8 @@ const NavBar = () => {
 
   const [activeTab, setActiveTab] = useState(0);
   const [stage, setStage] = useState(0);
+
+  const navigate = useNavigate();
 
   const handleAuth = async () => {
     //disconnects the web3 provider if it's already active
@@ -121,6 +124,7 @@ const NavBar = () => {
           src="/images/cloudax1.svg"
           alt="nav-logo"
           className="w-[11.6875rem] lg:max-w-full"
+          onClick={() => navigate("/")}
         />
         <div className="nav-tab">
           <div className="sub-nav-input">
